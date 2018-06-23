@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import 
 
 // components
 import MobileNav from "./components/MobileNav/MobileNav.js";
