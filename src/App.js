@@ -1,8 +1,7 @@
 import React, { Component } from "react";
+import 
 
 // components
-import PurchaseCoffee from "./components/PurchaseCoffee/PurchaseCoffee.js";
-import Nav from "./components/Nav/Nav.js";
 import MobileNav from "./components/MobileNav/MobileNav.js";
 
 class App extends Component {
@@ -10,8 +9,9 @@ class App extends Component {
     return (
       <div className="App">
         <MobileNav />
-        <PurchaseCoffee />
-        <p>Deathwish</p>
+        <div className="homepage-wrapper">
+          <p>Deathwish Homepage</p>
+        </div>
       </div>
     );
   }

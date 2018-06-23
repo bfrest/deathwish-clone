@@ -19,14 +19,14 @@ class MobileNav extends Component {
         </div>
 
         <div className="mobileNav-list">
-          <label
-            htmlFor="toggleNav"
+          <p
+            className="closeNav"
             onClick={() => {
               const mobileNavList = document.querySelector(".mobileNav-list");
               mobileNavList.classList.remove("open");
             }}>
             X
-          </label>
+          </p>
           <ul>
             <li>Shop</li>
           </ul>
