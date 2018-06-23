@@ -6,11 +6,12 @@ class MobileNav extends Component {
   render() {
     return (
       <div className="mobileNav-container">
+        {/* this is the navbar that is always showing*/}
         <div className="mobileNav">
           <p
             onClick={() => {
               const mobileNavList = document.querySelector(".mobileNav-list");
-              mobileNavList.classList.add("open");
+              mobileNavList.classList.add("open-nav");
             }}>
             MENU
           </p>
@@ -18,18 +19,24 @@ class MobileNav extends Component {
           <img className="shoppingcart-logo" src={shoppingCarLogo} alt="shopping cart" />
         </div>
 
+        {/* slide-in left nav */}
         <div className="mobileNav-list">
           <p
             className="closeNav"
             onClick={() => {
               const mobileNavList = document.querySelector(".mobileNav-list");
-              mobileNavList.classList.remove("open");
+              mobileNavList.classList.remove("open-nav");
             }}>
             X
           </p>
           <ul>
             <li>Shop</li>
           </ul>
+        </div>
+
+        {/* slide-in right shopping cart */}
+        <div className="shopping-cart">
+          <p>Your Cart</p>
         </div>
       </div>
     );

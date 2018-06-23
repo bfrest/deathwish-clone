@@ -39,38 +39,39 @@ class App extends Component {
             </ul>
 
             <input type="radio" />
-            <span>One-time purchase $19.99</span>
+            <span className="bold-desc">One-time purchase $19.99</span>
             <br />
             <input type="radio" />
-            <span>Subscribe & Save 20%: $15.99</span>
+            <span className="bold-desc">Subscribe & Save 20%: $15.99</span>
             <button className="red-buy-button">BUY NOW</button>
           </form>
 
-          <div>
+          <div className="home-desc">
             <p className="red-text">
               <img class="red-skull" src={skull} alt="red skull" />WARNING HIGHLY ADDICTIVE
             </p>
             <h2>DEATH WISH COFFEE</h2>
             <p>IS CREATED BY USING THE STRONGEST COMBINATION OF BEANS AND A PERFECT ROASTING PROCESS.</p>
             <p>
-              Awaken your inner rebel witht the <span>worlds strongest coffe</span>.
+              Awaken your inner rebel with the <span className="bold-desc">worlds strongest coffee</span>.
             </p>
             <p>
-              Be the best you can be with the clarity and focus that comes with the <span>strong coffee</span>.
+              Be the best you can be with the clarity and focus that comes with the <span className="bold-desc">strong coffee</span>.
             </p>
             <p>
-              Raise your coffee standards with one sip of these <span> premuim, bold beans</span>.
+              Raise your coffee standards with one sip of these <span className="bold-desc"> premuim, bold beans</span>.
             </p>
             <p>
-              Enjoy a smooth, never-bitter taste with subtle notes of <span>cherry and chocolate</span>.
+              Enjoy a smooth, never-bitter taste with subtle notes of <span className="bold-desc">cherry and chocolate</span>.
             </p>
             <p>
-              Kick bad habits with something just as strong but <span>100% natural</span>.
+              Kick bad habits with something just as strong but <span className="bold-desc">100% natural</span>.
             </p>
             <p>
-              We will refund you in full if it's not <span>the strongest coffee you've ever had</span>.
+              We will refund you in full if it's not <span className="bold-desc">the strongest coffee you've ever had</span>.
             </p>
           </div>
+          <hr className="line" />
         </div>
       </div>
     );

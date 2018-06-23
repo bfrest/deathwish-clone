@@ -1,3 +1,5 @@
+$red: #ef3534;
+
 .mobileNav {
   width: 100%;
   height: 15vh;
@@ -13,12 +15,12 @@
 }
 
 .mobileNav-list {
-  width: 70vw;
+  width: 100vw;
   height: 100vh;
-  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.9);
   position: relative;
   color: white;
-  left: -85vw;
+  left: -100vw;
   transition: left 0.4s;
   display: flex;
   text-align: left;
@@ -38,14 +40,14 @@
 
   p:hover {
     cursor: pointer;
-    color: red;
+    color: $red;
   }
 }
 
-.open {
+.open-nav {
   overflow-x: hidden;
   left: 0;
-  position: relative;
+  position: fixed;
 }
 
 .deathwish-logo {
@@ -56,4 +58,18 @@
 .shoppingcart-logo {
   width: 20px;
   height: 20px;
+}
+
+.shopping-cart {
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.9);
+  position: relative;
+  color: white;
+  right: 100vw;
+  transition: right 0.4s;
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  z-index: 1;
 }
