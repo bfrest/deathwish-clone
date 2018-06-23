@@ -1,0 +1,22 @@
+.Nav-container {
+  width: 100%;
+  height: 15vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+  li {
+    list-style-type: none;
+  }
+}
+
+.deathwish-logo {
+  width: 70px;
+  height: 70px;
+}
+
+.shoppingcart-logo {
+  width: 20px;
+  height: 20px;
+}

@@ -1,0 +1,24 @@
+.mobileNav {
+  width: 100%;
+  height: 15vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+}
+
+.mobileNav-list {
+  width: 75vw;
+  height: 100vh;
+  background: rgb(0, 0, 0);
+  position: relative;
+  color: white;
+  left: -75vw;
+  transition: left 0.4s;
+}
+
+.open {
+  left: 0;
+  position: sticky;
+}
