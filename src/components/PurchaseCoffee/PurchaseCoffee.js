@@ -15,7 +15,7 @@ class PurchaseCoffee extends Component {
         },
         {
           name: "coffee3",
-          pic: "https://www.deathwishcoffee.com/products/valhalla-java-odin-force-blend?lshst=collection",
+          pic: "https://cdn.shopify.com/s/files/1/0271/7209/products/barrel_brand_1024x1024.jpg?v=1504104887",
           price: 24,
           description: "This is the description for the coffe yoo"
         }
@@ -25,10 +25,10 @@ class PurchaseCoffee extends Component {
   render() {
     const listOfCoffee = this.state.coffee.map(item => {
       return (
-        <div>
-          <p>{item.name}</p>
+        <div className="coffee-list">
           <img src={item.pic} />
           <p>{item.name}</p>
+          <p>${item.price}</p>
         </div>
       );
     });
