@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import MobileNavStyles from "./MobileNav.css";
 import shoppingCarLogo from "../../icons/shopping-cart.png";
+import { Link } from "react-router-dom";
 
 class MobileNav extends Component {
   render() {
@@ -15,7 +16,9 @@ class MobileNav extends Component {
             }}>
             MENU
           </p>
-          <img className="deathwish-logo" src="https://cdn.shopify.com/s/files/1/0271/7209/t/99/assets/logo_svg.svg?2939705249316593302" alt="logo" />
+          <Link to="/">
+            <img className="deathwish-logo" src="https://cdn.shopify.com/s/files/1/0271/7209/t/99/assets/logo_svg.svg?2939705249316593302" alt="logo" />
+          </Link>
           <img className="shoppingcart-logo" src={shoppingCarLogo} alt="shopping cart" />
         </div>
 
@@ -30,7 +33,13 @@ class MobileNav extends Component {
             X
           </p>
           <ul>
-            <li>Shop</li>
+            <Link to="/coffee" className="nav-link">
+              <li>Shop</li>
+            </Link>
+            <br />
+            <Link to="/add-coffee" className="nav-link">
+              <li>Add Coffee</li>
+            </Link>
           </ul>
         </div>
 

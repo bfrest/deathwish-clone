@@ -44,6 +44,15 @@ $red: #ef3534;
   }
 }
 
+.nav-link {
+  text-decoration: none;
+  color: white;
+  font-size: 1.4em;
+  li:hover {
+    color: $red;
+  }
+}
+
 .open-nav {
   overflow-x: hidden;
   left: 0;

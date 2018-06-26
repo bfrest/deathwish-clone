@@ -1,0 +1,71 @@
+$red: #ef3534;
+
+.homepage-wrapper {
+  align-self: center;
+  position: absolute;
+  margin: 105px 0 0 0;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  li {
+    list-style-type: none;
+  }
+}
+
+.main-coffee-image {
+  margin: 15px 0 15px 0;
+  width: 120px;
+  height: 160px;
+}
+
+.bold-red-header {
+  color: $red;
+  font-weight: 1000;
+  font-size: 1.8em;
+}
+
+.select-coffee {
+  background: #f2f2f2;
+  width: 115%;
+}
+
+.coffee-type-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+}
+
+.red-buy-button {
+  width: 100%;
+  height: 9%;
+  border: none;
+  background: $red;
+  color: white;
+  margin: 20px 0 70px 0;
+  font-size: 1.2em;
+  font-weight: 800;
+}
+
+.home-desc {
+  width: 120%;
+  padding-bottom: 60px;
+}
+
+.red-skull {
+  width: 20px;
+  height: 20px;
+  padding-right: 10px;
+}
+
+.red-text {
+  color: $red;
+}
+
+.bold-desc {
+  font-weight: 900;
+}
+
+.line {
+  width: 100%;
+}
