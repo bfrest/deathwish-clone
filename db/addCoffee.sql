@@ -1,0 +1,1 @@
+INSERT INTO coffee (coffee_name, coffee_pic, side_pic, price, description) VALUES ($1, $2, $3, $4, $5);
