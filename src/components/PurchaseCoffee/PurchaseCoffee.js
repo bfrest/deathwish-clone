@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import PurchaseCoffeeStyles from "./PurchaseCoffeeStyles.css";
 
 class PurchaseCoffee extends Component {
@@ -22,7 +23,9 @@ class PurchaseCoffee extends Component {
     const listOfCoffee = this.state.coffee.map(item => {
       return (
         <div className="coffee-list">
-          <img src={item.coffee_pic} />
+          <Link to={item.coffee_reference}>
+            <img src={item.coffee_pic} />
+          </Link>
           <p>{item.coffee_name}</p>
           <p>- ${item.price}.99</p>
         </div>

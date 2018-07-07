@@ -19,6 +19,7 @@ app.use(bodyParser.json());
 
 app.post("/api/addCoffee", coffeeController.addCoffee);
 app.get("/api/getAllCoffee", coffeeController.getAllCoffee);
+app.get("/api/getDeathwish", coffeeController.getDeathwish);
 
 app.listen(3001, () => {
   console.log("APP IS CAFFINATED");

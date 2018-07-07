@@ -1,0 +1,90 @@
+$red: #ef3534;
+
+.Deathwish-wrapper {
+  position: absolute;
+  margin-top: 25%;
+  display: flex;
+  align-self: center;
+  width: 90%;
+
+  .coffee-bag {
+    width: 215px;
+    height: 290px;
+    margin: 0 0 100px 0;
+  }
+
+  .coffee-type {
+    width: 100px;
+    height: 100px;
+  }
+
+  .coffee-header {
+    font-size: 1.6em;
+    font-weight: 400;
+  }
+
+  .crud-btn {
+    button {
+      margin: 5px 5px;
+    }
+  }
+
+  .coffee-size-btns {
+    button {
+      background: none;
+      border: none;
+      font-size: 1em;
+      color: black;
+    }
+    :hover {
+      background: black;
+      color: white;
+    }
+  }
+
+  .select-size {
+    margin: 30px 0 30px 0;
+  }
+
+  .grind-wrapper {
+    margin-top: 50px;
+    p {
+      padding-bottom: 30px;
+    }
+  }
+
+  .purchase-options-wrapper {
+    margin-top: 60px;
+    .radio-text {
+      font-weight: 600;
+    }
+  }
+
+  .gray-background {
+    background: #f2f2f2;
+    border-radius: 5px;
+    padding: 15px 20px;
+  }
+
+  button {
+    background: $red;
+    border: none;
+    color: white;
+    font-size: 0.8em;
+    font-weight: 200;
+    padding: 15px 15px;
+  }
+
+  .high-caffeine {
+    font-size: 1.5em;
+  }
+
+  .left-text {
+    text-align: left;
+  }
+
+  .skull {
+    height: 15px;
+    width: 15px;
+  }
+}

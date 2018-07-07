@@ -1,0 +1,1 @@
+SELECT * FROM coffee WHERE id = 2;
