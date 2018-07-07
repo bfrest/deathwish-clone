@@ -1,0 +1,1 @@
+UPDATE coffee SET coffee_name = $1, coffee_pic = $2, side_pic = $3, description = $4 WHERE id = 2;

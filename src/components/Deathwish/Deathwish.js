@@ -10,10 +10,15 @@ class Deathwish extends Component {
     this.state = {
       coffee: []
     };
+    this.deleteCoffee = this.deleteCoffee.bind(this);
   }
 
   componentDidMount() {
     axios.get("http://localhost:3001/api/getDeathwish").then(results => this.setState({ coffee: [...results.data] }));
+  }
+
+  deleteCoffee() {
+    axios.delete("http://localhost:3001/api/deleteDeathwish").then(() => console.log("deleted"));
   }
 
   render() {
@@ -27,8 +32,8 @@ class Deathwish extends Component {
                 <Link to="/editDeathwish">
                   <button>edit</button>
                 </Link>
-                <Link to="/deleteDeathwish">
-                  <button>delete</button>
+                <Link to="/home">
+                  <button onClick={this.deleteCoffee}>delete</button>
                 </Link>
               </div>
 
@@ -72,15 +77,22 @@ class Deathwish extends Component {
 
               <div className="left-text">
                 <p>THE WORLDS STRONGEST COFFEE</p>
+
                 <p>{coffee.description}</p>
               </div>
 
               <p>
                 <img className="skull" src={skull} alt="skull" />WARNING: HIGHLY ADDICTIVE
               </p>
+              <ul>
+                <li>{coffee.bullet1}</li>
+                <li>{coffee.bullet2}</li>
+                <li>{coffee.bullet3}</li>
+              </ul>
             </div>
           );
         })}
+        {console.log(this.state.coffee)}
       </div>
     );
   }

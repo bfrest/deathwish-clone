@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
-import EditDeathwishStyle from "./EditDeathwish.css";
 
-class EditDeathwish extends Component {
+class EditCoffee extends Component {
   constructor() {
     super();
 
@@ -14,9 +13,9 @@ class EditDeathwish extends Component {
     this.updateItem = this.updateItem.bind(this);
   }
 
-  componentDidMount() {
-    axios.get("http://localhost:3001/api/getDeathwish").then(results => this.setState({ coffee: [...results.data] }));
-  }
+  // componentDidMount() {
+  //   axios.get(`http://localhost:3001/api/getCoffee?reference=${this.location.props.}`).then(results => this.setState({ coffee: [...results.data] }));
+  // }
 
   handleInputs(e) {
     this.setState({ [e.target.name]: e.target.value });
@@ -30,7 +29,7 @@ class EditDeathwish extends Component {
   render() {
     return this.state.coffee.map(coffee => {
       return (
-        <div className="EditDeathwish-wrapper">
+        <div className="">
           <h1>Edit Coffee</h1>
           <p>
             <i>Don't forget to change each input to set it to state</i>
@@ -52,4 +51,4 @@ class EditDeathwish extends Component {
   }
 }
 
-export default EditDeathwish;
+export default EditCoffee;

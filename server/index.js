@@ -20,6 +20,9 @@ app.use(bodyParser.json());
 app.post("/api/addCoffee", coffeeController.addCoffee);
 app.get("/api/getAllCoffee", coffeeController.getAllCoffee);
 app.get("/api/getDeathwish", coffeeController.getDeathwish);
+//app.get("/api/getCoffee/:coffeeReference", coffeeController.getCoffee);
+app.put("/api/updateDeathwish", coffeeController.updateDeathwish);
+app.delete("/api/deleteDeathwish", coffeeController.deleteDeathwish);
 
 app.listen(3001, () => {
   console.log("APP IS CAFFINATED");
