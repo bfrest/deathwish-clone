@@ -34,12 +34,16 @@ class PurchaseCoffee extends Component {
 
     return (
       <div className="purchase-coffee-wrapper">
-        <p>
-          <strong>Coffee</strong>
-        </p>
-        <hr />
-        <p>World's strongest coffee</p>
-        <p>Free Shipping on alll orders over $50. 100% money back guarantee if it's not the stringest coffee you've ever had.</p>
+        <div className="purchase-header">
+          <h3>
+            <strong>Coffee</strong>
+          </h3>
+          <div className="blackLine" />
+          <p>
+            <strong>World's strongest coffee</strong>
+          </p>
+          <p>Free Shipping on alll orders over $50. 100% money back guarantee if it's not the stringest coffee you've ever had.</p>
+        </div>
         {listOfCoffee}
       </div>
     );

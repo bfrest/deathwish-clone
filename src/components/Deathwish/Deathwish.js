@@ -26,9 +26,9 @@ class Deathwish extends Component {
       <div className="Deathwish-wrapper">
         {this.state.coffee.map(coffee => {
           return (
-            <div>
-              <img src={coffee.coffee_pic} className="coffee-bag" />
-              <div className="crud-btn">
+            <div className="deathwish-all">
+              <div className="crud-button-with-img">
+                <img src={coffee.coffee_pic} className="coffee-bag" />
                 <Link to="/editDeathwish">
                   <button>edit</button>
                 </Link>
@@ -37,58 +37,58 @@ class Deathwish extends Component {
                 </Link>
               </div>
 
-              <p className="coffee-header">{coffee.coffee_name}</p>
-              <p>${coffee.price}.99</p>
-              <p className="red-text">FREE DOMESTIC SHIPPING OVER $50</p>
-              <p className="select-size">Select Size</p>
+              <div className="coffee-info">
+                <p className="coffee-header">{coffee.coffee_name}</p>
+                <p>${coffee.price}.99</p>
+                <p className="red-text">FREE DOMESTIC SHIPPING OVER $50</p>
+                <p className="select-size">Select Size</p>
 
-              <div className="coffee-size-btns">
-                <button>1 POUND</button>
-                <button>2 POUND</button>
-                <button>5 POUND</button>
+                <div className="coffee-size-btns">
+                  <button>1 POUND</button>
+                  <button>2 POUND</button>
+                  <button>5 POUND</button>
+                </div>
+
+                <div className="grind-wrapper">
+                  <p>Select Grind</p>
+                  <img className="coffee-type" src="https://cdn.shopify.com/s/files/1/0271/7209/t/99/assets/ground.jpg?11144845398872562001" alt="ground coffee" />
+                  <img className="coffee-type" src="https://cdn.shopify.com/s/files/1/0271/7209/t/99/assets/whole.jpg?11144845398872562001" alt="ground coffee" />
+                </div>
+
+                <div className="purchase-options-wrapper">
+                  <p className="gray-background radio-text">
+                    <input type="radio" />One-time purchase $19.99
+                  </p>
+                  <p className="radio-text">
+                    <input type="radio" />Subscribe & Save 20%: $15.99
+                  </p>
+                  <p>
+                    Deliver every
+                    <select>
+                      <option>7 Days</option>
+                      <option>14 Days</option>
+                      <option>30 Days</option>
+                      <option>60 Days</option>
+                    </select>
+                  </p>
+                </div>
+
+                <button>ADD TO CART</button>
+                <p className="high-caffeine">DEATH WISH COFFEE COMPANY: STRONG, HIGH-CAFFEINE COFFEE WITH LOW ACIDITY</p>
+
+                <div className="left-text">
+                  <p>THE WORLDS STRONGEST COFFEE</p>
+
+                  <p>{coffee.description}</p>
+
+                  <p>
+                    <img className="skull" src={skull} alt="skull" />WARNING: HIGHLY ADDICTIVE
+                  </p>
+                  <li>{coffee.bullet1}</li>
+                  <li>{coffee.bullet2}</li>
+                  <li>{coffee.bullet3}</li>
+                </div>
               </div>
-
-              <div className="grind-wrapper">
-                <p>Select Grind</p>
-                <img className="coffee-type" src="https://cdn.shopify.com/s/files/1/0271/7209/t/99/assets/ground.jpg?11144845398872562001" alt="ground coffee" />
-                <img className="coffee-type" src="https://cdn.shopify.com/s/files/1/0271/7209/t/99/assets/whole.jpg?11144845398872562001" alt="ground coffee" />
-              </div>
-
-              <div className="purchase-options-wrapper">
-                <p className="gray-background radio-text">
-                  <input type="radio" />One-time purchase $19.99
-                </p>
-                <p className="radio-text">
-                  <input type="radio" />Subscribe & Save 20%: $15.99
-                </p>
-                <p>
-                  Deliver every
-                  <select>
-                    <option>7 Days</option>
-                    <option>14 Days</option>
-                    <option>30 Days</option>
-                    <option>60 Days</option>
-                  </select>
-                </p>
-              </div>
-
-              <button>ADD TO CART</button>
-              <p className="high-caffeine">DEATH WISH COFFEE COMPANY: STRONG, HIGH-CAFFEINE COFFEE WITH LOW ACIDITY</p>
-
-              <div className="left-text">
-                <p>THE WORLDS STRONGEST COFFEE</p>
-
-                <p>{coffee.description}</p>
-              </div>
-
-              <p>
-                <img className="skull" src={skull} alt="skull" />WARNING: HIGHLY ADDICTIVE
-              </p>
-              <ul>
-                <li>{coffee.bullet1}</li>
-                <li>{coffee.bullet2}</li>
-                <li>{coffee.bullet3}</li>
-              </ul>
             </div>
           );
         })}
