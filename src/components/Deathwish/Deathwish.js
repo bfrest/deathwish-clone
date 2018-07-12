@@ -3,6 +3,8 @@ import axios from "axios";
 import DeathwishStyles from "./Deathwish.css";
 import skull from "../../icons/skull.png";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import { updateCoffee } from "../../ducks/reducer.js";
 
 class Deathwish extends Component {
   constructor() {
@@ -22,11 +24,14 @@ class Deathwish extends Component {
   }
 
   render() {
+    // this will use redux to set the coffee to add to the state
+    const { updateCoffee } = this.props;
+
     return (
       <div className="Deathwish-wrapper">
         {this.state.coffee.map(coffee => {
           return (
-            <div className="deathwish-all">
+            <div className="deathwish-all" key={coffee.coffee_reference}>
               <div className="crud-button-with-img">
                 <img src={coffee.coffee_pic} className="coffee-bag" />
                 <Link to="/editDeathwish">
@@ -42,19 +47,16 @@ class Deathwish extends Component {
                 <p>${coffee.price}.99</p>
                 <p className="red-text">FREE DOMESTIC SHIPPING OVER $50</p>
                 <p className="select-size">Select Size</p>
-
                 <div className="coffee-size-btns">
                   <button>1 POUND</button>
                   <button>2 POUND</button>
                   <button>5 POUND</button>
                 </div>
-
                 <div className="grind-wrapper">
                   <p>Select Grind</p>
                   <img className="coffee-type" src="https://cdn.shopify.com/s/files/1/0271/7209/t/99/assets/ground.jpg?11144845398872562001" alt="ground coffee" />
                   <img className="coffee-type" src="https://cdn.shopify.com/s/files/1/0271/7209/t/99/assets/whole.jpg?11144845398872562001" alt="ground coffee" />
                 </div>
-
                 <div className="purchase-options-wrapper">
                   <p className="gray-background radio-text">
                     <input type="radio" />One-time purchase $19.99
@@ -73,7 +75,20 @@ class Deathwish extends Component {
                   </p>
                 </div>
 
-                <button>ADD TO CART</button>
+                {/* // ! create a function to add the image, name, and the price to redux to use in the shopping-cart */}
+                <button
+                  onClick={e => {
+                    this.state.coffee.map(item => {
+                      // I could not figure out how to get the values from state to set them as a variable without mapping it
+
+                      const coffee_reference = item.coffee_reference;
+                      const coffee_pic = item.coffee_pic;
+                      const price = item.price;
+                      updateCoffee(coffee_pic, coffee_reference, price);
+                    });
+                  }}>
+                  ADD TO CART
+                </button>
                 <p className="high-caffeine">DEATH WISH COFFEE COMPANY: STRONG, HIGH-CAFFEINE COFFEE WITH LOW ACIDITY</p>
 
                 <div className="left-text">
@@ -92,10 +107,21 @@ class Deathwish extends Component {
             </div>
           );
         })}
-        {console.log(this.state.coffee)}
       </div>
     );
   }
 }
 
-export default Deathwish;
+function mapStateToProps(state) {
+  const { coffee_pic, coffee_name, price } = state;
+  return {
+    coffee_pic,
+    coffee_name,
+    price
+  };
+}
+
+export default connect(
+  mapStateToProps,
+  { updateCoffee }
+)(Deathwish);

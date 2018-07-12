@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import MobileNavStyles from "./MobileNav.css";
 import shoppingCarLogo from "../../icons/shopping-cart.png";
 import { Link } from "react-router-dom";
-
 import ShoppingCart from "../ShoppingCart/ShoppingCart.js";
 
 class MobileNav extends Component {
@@ -23,7 +22,7 @@ class MobileNav extends Component {
 
   closeCart() {
     const shoppingCart = document.querySelector(".shopping-cart");
-    shoppingCart.classList.remove("close-cart");
+    shoppingCart.classList.remove("open-cart");
   }
 
   render() {
@@ -55,7 +54,10 @@ class MobileNav extends Component {
         </div>
 
         {/* slide-in right shopping cart */}
-        <div className="shopping-cart" />
+
+        <div className="shopping-cart">
+          <ShoppingCart closeCartFunction={this.closeCart} />
+        </div>
       </div>
     );
   }

@@ -1,5 +1,14 @@
 $red: #ef3534;
 
+.shopping-cart {
+  position: absolute;
+  display: none;
+}
+
+.open-cart {
+  display: flex;
+}
+
 .mobileNav {
   width: 100%;
   height: 15vh;
@@ -68,17 +77,3 @@ $red: #ef3534;
   width: 20px;
   height: 20px;
 }
-
-// .shopping-cart {
-//   height: 100vh;
-//   width: 100vw;
-//   background: rgba(0, 0, 0, 0.9);
-//   position: relative;
-//   color: white;
-//   right: 100vw;
-//   transition: right 0.4s;
-//   display: flex;
-//   text-align: left;
-//   flex-direction: column;
-//   z-index: 1;
-// }
