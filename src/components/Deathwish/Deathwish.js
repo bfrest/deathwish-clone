@@ -52,11 +52,13 @@ class Deathwish extends Component {
                   <button>2 POUND</button>
                   <button>5 POUND</button>
                 </div>
+
                 <div className="grind-wrapper">
                   <p>Select Grind</p>
                   <img className="coffee-type" src="https://cdn.shopify.com/s/files/1/0271/7209/t/99/assets/ground.jpg?11144845398872562001" alt="ground coffee" />
                   <img className="coffee-type" src="https://cdn.shopify.com/s/files/1/0271/7209/t/99/assets/whole.jpg?11144845398872562001" alt="ground coffee" />
                 </div>
+
                 <div className="purchase-options-wrapper">
                   <p className="gray-background radio-text">
                     <input type="radio" />One-time purchase $19.99
@@ -75,7 +77,6 @@ class Deathwish extends Component {
                   </p>
                 </div>
 
-                {/* // ! create a function to add the image, name, and the price to redux to use in the shopping-cart */}
                 <button
                   onClick={e => {
                     this.state.coffee.map(item => {
@@ -89,6 +90,7 @@ class Deathwish extends Component {
                   }}>
                   ADD TO CART
                 </button>
+
                 <p className="high-caffeine">DEATH WISH COFFEE COMPANY: STRONG, HIGH-CAFFEINE COFFEE WITH LOW ACIDITY</p>
 
                 <div className="left-text">

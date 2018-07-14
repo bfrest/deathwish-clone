@@ -3,13 +3,32 @@ import ShoppingCartStyles from "./ShoppingCart.css";
 import { connect } from "react-redux";
 
 class ShoppingCart extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      quantity: 1
+    };
+    this.incrementQuantity = this.incrementQuantity.bind(this);
+    this.decrementQuantity = this.decrementQuantity.bind(this);
+  }
+
+  incrementQuantity() {
+    this.setState({ quantity: this.state.quantity + 1 });
+  }
+
+  decrementQuantity() {
+    this.setState({ quantity: this.state.quantity - 1 });
+  }
+
   render() {
     let cart;
-    let quantity = 2;
+    const { quantity } = this.state;
 
-    // not sure why its refering to the props and coffee_name ????
+    // not sure why its refering to coffee_name instead of coffee.coffee_name????
     const { coffee_name, coffee_pic, price } = this.props.coffee_name;
 
+    // if the cart is empty show a div that says it's empty else show the items in the cart
     if (this.props.coffee_pic === "") {
       cart = <p>Your cart is empty</p>;
     } else {
@@ -21,11 +40,11 @@ class ShoppingCart extends Component {
             <br /> ${price}.00
           </p>
           <div>
-            <button>-</button>
-            <input defaultValue={quantity} />
-            <button>+</button>
+            <button onClick={this.decrementQuantity}>-</button>
+            <input className="coffeeNumber" value={this.state.quantity} />
+            <button onClick={this.incrementQuantity}>+</button>
           </div>
-          <h1>Total: ${price * quantity}.00</h1>
+          <h1>Total: ${price * quantity}.99</h1>
         </div>
       );
     }
