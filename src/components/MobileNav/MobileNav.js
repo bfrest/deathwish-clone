@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import MobileNavStyles from "./MobileNav.css";
 import shoppingCarLogo from "../../icons/shopping-cart.png";
 import { Link } from "react-router-dom";
+import ShoppingCart from "../ShoppingCart/ShoppingCart.js";
 
 class MobileNav extends Component {
   closeNav() {
@@ -14,6 +15,16 @@ class MobileNav extends Component {
     mobileNavList.classList.add("open-nav");
   }
 
+  openCart() {
+    const shoppingCart = document.querySelector(".shopping-cart");
+    shoppingCart.classList.add("open-cart");
+  }
+
+  closeCart() {
+    const shoppingCart = document.querySelector(".shopping-cart");
+    shoppingCart.classList.remove("open-cart");
+  }
+
   render() {
     return (
       <div className="mobileNav-container">
@@ -23,7 +34,7 @@ class MobileNav extends Component {
           <Link to="/">
             <img className="deathwish-logo" src="https://cdn.shopify.com/s/files/1/0271/7209/t/99/assets/logo_svg.svg?2939705249316593302" alt="logo" />
           </Link>
-          <img className="shoppingcart-logo" src={shoppingCarLogo} alt="shopping cart" />
+          <img className="shoppingcart-logo" src={shoppingCarLogo} alt="shopping cart" onClick={this.openCart} />
         </div>
 
         {/* slide-in left nav */}
@@ -43,8 +54,9 @@ class MobileNav extends Component {
         </div>
 
         {/* slide-in right shopping cart */}
+
         <div className="shopping-cart">
-          <p>Your Cart</p>
+          <ShoppingCart closeCartFunction={this.closeCart} />
         </div>
       </div>
     );

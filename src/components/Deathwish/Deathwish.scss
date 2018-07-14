@@ -7,12 +7,6 @@ $red: #ef3534;
   align-self: center;
   width: 90%;
 
-  .coffee-bag {
-    width: 215px;
-    height: 290px;
-    margin: 0 0 100px 0;
-  }
-
   .coffee-type {
     width: 100px;
     height: 100px;
@@ -23,9 +17,17 @@ $red: #ef3534;
     font-weight: 400;
   }
 
-  .crud-btn {
-    button {
-      margin: 5px 5px;
+  .coffee-bag {
+    align-self: center;
+  }
+
+  .crud-button-with-img {
+    display: flex;
+    flex-direction: column;
+    img {
+      width: 215px;
+      height: 290px;
+      margin: 0 0 100px 0;
     }
   }
 
@@ -80,11 +82,42 @@ $red: #ef3534;
   }
 
   .left-text {
-    text-align: left;
+    text-align: center;
   }
 
   .skull {
     height: 15px;
     width: 15px;
+  }
+}
+
+@media (min-width: 900px) {
+  .Deathwish-wrapper {
+    margin-top: 15%;
+
+    .deathwish-all {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      .crud-button-with-img {
+        align-self: flex-start;
+        margin: 10% 0 0 0;
+        img {
+          width: 285px;
+          height: 390px;
+          grid-row: 1 / 2;
+          grid-column: 1 / 2;
+        }
+      }
+
+      .coffee-info {
+        grid-column: 2 / 3;
+        width: 80%;
+      }
+
+      .left-text {
+        text-align: left;
+      }
+    }
   }
 }
