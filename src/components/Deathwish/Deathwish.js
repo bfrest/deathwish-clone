@@ -13,6 +13,7 @@ class Deathwish extends Component {
       coffee: []
     };
     this.deleteCoffee = this.deleteCoffee.bind(this);
+    this.handleAddToCart = this.handleAddToCart.bind(this);
   }
 
   componentDidMount() {
@@ -23,12 +24,32 @@ class Deathwish extends Component {
     axios.delete("http://localhost:3001/api/deleteDeathwish").then(() => console.log("deleted"));
   }
 
-  render() {
+  // this function will add the item to the cart using redux, and show and hide the success message
+  handleAddToCart(e) {
     // this will use redux to set the coffee to add to the state
     const { updateCoffee } = this.props;
+    const messageBox = document.querySelector(".message");
 
+    this.state.coffee.map(item => {
+      // I could not figure out how to get the values from state to set them as a variable without mapping it
+      const coffee_reference = item.coffee_reference;
+      const coffee_pic = item.coffee_pic;
+      const price = item.price;
+      updateCoffee(coffee_pic, coffee_reference, price);
+    });
+    messageBox.classList.add("message-open");
+    setTimeout(() => {
+      messageBox.classList.remove("message-open");
+    }, 2300);
+  }
+
+  render() {
     return (
       <div className="Deathwish-wrapper">
+        <div className="message">
+          <p>Added to Cart</p>
+        </div>
+
         {this.state.coffee.map(coffee => {
           return (
             <div className="deathwish-all" key={coffee.coffee_reference}>
@@ -77,17 +98,7 @@ class Deathwish extends Component {
                   </p>
                 </div>
 
-                <button
-                  onClick={e => {
-                    this.state.coffee.map(item => {
-                      // I could not figure out how to get the values from state to set them as a variable without mapping it
-
-                      const coffee_reference = item.coffee_reference;
-                      const coffee_pic = item.coffee_pic;
-                      const price = item.price;
-                      updateCoffee(coffee_pic, coffee_reference, price);
-                    });
-                  }}>
+                <button className="addButton" onClick={this.handleAddToCart}>
                   ADD TO CART
                 </button>
 

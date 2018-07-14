@@ -7,6 +7,24 @@ $red: #ef3534;
   align-self: center;
   width: 90%;
 
+  .message {
+    background: #dff2bf;
+    height: 55px;
+    width: 180px;
+    font-size: 1.2em;
+    color: #4f8a10;
+    border-radius: 10px;
+    position: fixed;
+    margin-left: 25%;
+    box-shadow: 0px 0px 8px black;
+    bottom: 110vh;
+    transition: all 1s;
+  }
+
+  .message-open {
+    bottom: 80vh;
+  }
+
   .coffee-type {
     width: 100px;
     height: 100px;
@@ -94,6 +112,10 @@ $red: #ef3534;
 @media (min-width: 900px) {
   .Deathwish-wrapper {
     margin-top: 15%;
+
+    .message {
+      margin-left: 37%;
+    }
 
     .deathwish-all {
       display: grid;
