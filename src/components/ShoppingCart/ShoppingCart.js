@@ -30,20 +30,22 @@ class ShoppingCart extends Component {
 
     // if the cart is empty show a div that says it's empty else show the items in the cart
     if (this.props.coffee_pic === "") {
-      cart = <p>Your cart is empty</p>;
+      cart = <p className="empty-cart">Your cart is empty</p>;
     } else {
       cart = (
         <div className="cart-items-wrapper">
-          <img src={coffee_pic} alt="coffee image" />
+          <img className="cartImg" src={coffee_pic} alt="coffee image" />
           <p>
             {coffee_name}
-            <br /> ${price}.00
+            <br /> ${price}.99
           </p>
-          <div>
+
+          <div className="quantity">
             <button onClick={this.decrementQuantity}>-</button>
             <input className="coffeeNumber" value={this.state.quantity} />
             <button onClick={this.incrementQuantity}>+</button>
           </div>
+
           <h1>Total: ${price * quantity}.99</h1>
         </div>
       );

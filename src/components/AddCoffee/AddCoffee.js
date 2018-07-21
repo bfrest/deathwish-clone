@@ -11,7 +11,8 @@ class AddCoffee extends Component {
       coffeePic: "",
       sidePic: "",
       price: "",
-      description: ""
+      description: "",
+      uploadKey: ""
     };
 
     this.handleName = this.handleName.bind(this);
@@ -42,10 +43,15 @@ class AddCoffee extends Component {
     this.setState({ description: e.target.value });
   }
 
-  addCoffee() {
-    const { coffeeName, coffeePic, sidePic, price, description } = this.state;
+  addCoffee(e) {
+    const { coffeeName, coffeePic, sidePic, price, description, uploadKey } = this.state;
+    const uploadKeyInput = document.querySelector(".uploadKey");
 
-    axios.post("http://localhost:3001/api/addCoffee", { coffeeName, coffeePic, sidePic, price, description }).then(() => console.log("Item Added"));
+    if (uploadKeyInput.value === uploadKey) {
+      axios.post("http://localhost:3001/api/addCoffee", { coffeeName, coffeePic, sidePic, price, description }).then(() => console.log("Item Added"));
+    } else {
+      alert("YOU SHALL NOT UPLOAD");
+    }
   }
 
   render() {
@@ -57,6 +63,7 @@ class AddCoffee extends Component {
           <input placeholder="Side Picture" onChange={this.handleSidePic} />
           <input placeholder="Price" onChange={this.handlePrice} />
           <input placeholder="Description" onChange={this.handleDescription} />
+          <input placeholder="Upload Key" className="uploadKey" />
           <button onClick={this.addCoffee}>Add Coffee</button>
         </form>
       </div>
