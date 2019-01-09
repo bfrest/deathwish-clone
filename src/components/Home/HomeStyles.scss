@@ -4,7 +4,6 @@
   @extend %flex-column-with-center;
   align-self: center;
   position: absolute;
-  margin: 105px 0 0 0;
   width: 75%;
 
   li {
@@ -27,7 +26,7 @@
 .select-coffee {
   background: #f2f2f2;
   width: 100%;
-  height: 30em;
+  padding: 20px;
 }
 
 .coffee-type-img {
@@ -35,6 +34,12 @@
   height: 100px;
   border-radius: 50px;
   margin-right: 10%;
+  margin: 20px;
+  border: 2px solid gray;
+
+  &:hover {
+    border: 2px solid red;
+  }
 }
 
 .red-buy-button {

@@ -1,0 +1,1 @@
+SELECT * FROM coffee JOIN bullet_points ON (coffee.id = bullet_points.reference) WHERE coffee.id = 3;
