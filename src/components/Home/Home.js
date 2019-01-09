@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import skull from "../../icons/skull.png";
-import HomeStyles from "./HomeStyles.css";
+import "./HomeStyles.css";
 
 class Home extends Component {
   state = {};
@@ -13,10 +13,12 @@ class Home extends Component {
           alt="coffee image"
         />
         <div className="aligning-right">
+          <br />
           <p>
-            BUY THE WORLDS <br />
+            WAKE UP WITH THE WORLDS <br />
             <span className="bold-red-header">STRONGEST</span>
-            <br />COFFEE
+            <br />
+            COFFEE
           </p>
 
           <p>100% MONEY-BACK GUARANTEE FREE DOMESTIC SHIPPING OVER $50</p>
@@ -25,29 +27,42 @@ class Home extends Component {
             <p className="select-coffee-header">SELECT COFFEE TYPE</p>
             <ul>
               <li>
-                <img className="coffee-type-img" src="https://cdn.shopify.com/s/files/1/0271/7209/t/99/assets/ground.jpg?13199823163854796125" alt="ground coffee" />
+                <img className="coffee-type-img" src="https://res.cloudinary.com/bfrest/image/upload/v1547036310/grounds.jpg" alt="ground coffee" />
               </li>
               <li>
-                <img className="coffee-type-img" src="https://cdn.shopify.com/s/files/1/0271/7209/t/99/assets/whole.jpg?13199823163854796125" alt="whole bean coffee" />
+                <img className="coffee-type-img" src="https://res.cloudinary.com/bfrest/image/upload/v1547036310/whole.jpg" alt="whole bean coffee" />
               </li>
               <li>
-                <img className="coffee-type-img" src="https://cdn.shopify.com/s/files/1/0271/7209/t/99/assets/deathcups.jpg?13199823163854796125" alt="k-cup coffee" />
+                <img className="coffee-type-img" src="https://res.cloudinary.com/bfrest/image/upload/v1547036310/deathcups.jpg" alt="k-cup coffee" />
               </li>
             </ul>
-
             <input type="radio" />
             <span className="bold-desc">One-time purchase $19.99</span>
             <br />
+            <br />
             <input type="radio" />
             <span className="bold-desc">Subscribe & Save 20%: $15.99</span>
+            <br />
+            <br />
+            <label>Deliver Every</label>
+            <select>
+              <option>7 Days</option>
+              <option>14 Days</option>
+              <option>30 Days</option>
+              <option>60 Days</option>
+            </select>
+            <br />
+            <br />
             <button className="red-buy-button">BUY NOW</button>
+            <p>100% No-BS Guarantee</p>
           </form>
         </div>
 
         <div className="home-desc">
           <div className="warning-description">
             <p className="red-text">
-              <img className="red-skull" src={skull} alt="red skull" />WARNING HIGHLY ADDICTIVE
+              <img className="red-skull" src={skull} alt="red skull" />
+              WARNING HIGHLY ADDICTIVE
             </p>
             <h2>DEATH WISH COFFEE</h2>
             <p>IS CREATED BY USING THE STRONGEST COMBINATION OF BEANS AND A PERFECT ROASTING PROCESS.</p>

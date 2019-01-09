@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import MobileNavStyles from "./MobileNav.css";
+import "./MobileNav.css";
 import shoppingCarLogo from "../../icons/shopping-cart.png";
 import { Link } from "react-router-dom";
 import ShoppingCart from "../ShoppingCart/ShoppingCart.js";
@@ -34,7 +34,7 @@ class MobileNav extends Component {
             MENU
           </p>
           <Link to="/">
-            <img className="deathwish-logo" src="https://cdn.shopify.com/s/files/1/0271/7209/t/99/assets/logo_svg.svg?2939705249316593302" alt="logo" />
+            <img className="deathwish-logo" src="https://res.cloudinary.com/bfrest/image/upload/v1546996267/Screen_Shot_2019-01-08_at_6.05.11_PM.png" alt="logo" />
           </Link>
           <img className="shoppingcart-logo" src={shoppingCarLogo} alt="shopping cart" onClick={this.openCart} />
         </div>

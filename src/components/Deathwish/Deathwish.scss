@@ -1,11 +1,30 @@
 $red: #ef3534;
 
+.adminInput {
+  background: black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  position: fixed;
+  align-self: center;
+  top: 110vh;
+  transition: all 0.5s;
+}
+
+.open-admin-form {
+  top: 30vh;
+}
+
 .Deathwish-wrapper {
   position: absolute;
   margin-top: 25%;
   display: flex;
   align-self: center;
   width: 90%;
+  padding-bottom: 20px;
 
   .message {
     background: #dff2bf;
@@ -46,6 +65,9 @@ $red: #ef3534;
       width: 215px;
       height: 290px;
       margin: 0 0 100px 0;
+    }
+    button {
+      margin-top: 15px;
     }
   }
 
@@ -112,9 +134,15 @@ $red: #ef3534;
 @media (min-width: 900px) {
   .Deathwish-wrapper {
     margin-top: 15%;
+    font-size: 1.3em;
+
+    .adminInput {
+      margin-left: 47%;
+    }
 
     .message {
       margin-left: 37%;
+      padding-bottom: 15px;
     }
 
     .deathwish-all {
@@ -124,6 +152,7 @@ $red: #ef3534;
       .crud-button-with-img {
         align-self: flex-start;
         margin: 10% 0 0 0;
+
         img {
           width: 285px;
           height: 390px;

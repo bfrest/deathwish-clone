@@ -3,6 +3,7 @@ import axios from "axios";
 import DeathwishStyles from "./Deathwish.css";
 import skull from "../../icons/skull.png";
 import { Link } from "react-router-dom";
+import { Redirect } from "react-router";
 import { connect } from "react-redux";
 import { updateCoffee } from "../../ducks/reducer.js";
 
@@ -10,18 +11,17 @@ class Deathwish extends Component {
   constructor() {
     super();
     this.state = {
-      coffee: []
+      coffee: [],
+      adminCode: "caffeine",
+      toEdit: false
     };
-    this.deleteCoffee = this.deleteCoffee.bind(this);
+
     this.handleAddToCart = this.handleAddToCart.bind(this);
+    this.coffeeEdit = this.coffeeEdit.bind(this);
   }
 
   componentDidMount() {
     axios.get("http://localhost:3001/api/getDeathwish").then(results => this.setState({ coffee: [...results.data] }));
-  }
-
-  deleteCoffee() {
-    axios.delete("http://localhost:3001/api/deleteDeathwish").then(() => console.log("deleted"));
   }
 
   // this function will add the item to the cart using redux, and show and hide the success message
@@ -37,13 +37,35 @@ class Deathwish extends Component {
       const price = item.price;
       updateCoffee(coffee_pic, coffee_reference, price);
     });
+
+    // below, it will show the success message for 2.3 seconds, then slides it out
     messageBox.classList.add("message-open");
     setTimeout(() => {
       messageBox.classList.remove("message-open");
     }, 2300);
   }
 
+  coffeeEdit() {
+    const { adminCode } = this.state;
+    const adminCodeInput = document.querySelector(".secretInput");
+    if (adminCodeInput.value === adminCode) {
+      // redirect to the edit page
+      this.setState({ toEdit: true });
+    } else {
+      alert("YOU SHALL NOT PASS!");
+    }
+  }
+
+  toggleAdminForm(e) {
+    const adminInput = document.querySelector(".adminInput");
+    adminInput.classList.toggle("open-admin-form");
+  }
+
   render() {
+    if (this.state.toEdit === true) {
+      return <Redirect to="/editDeathwish" />;
+    }
+
     return (
       <div className="Deathwish-wrapper">
         <div className="message">
@@ -54,13 +76,14 @@ class Deathwish extends Component {
           return (
             <div className="deathwish-all" key={coffee.coffee_reference}>
               <div className="crud-button-with-img">
-                <img src={coffee.coffee_pic} className="coffee-bag" />
-                <Link to="/editDeathwish">
-                  <button>edit</button>
-                </Link>
-                <Link to="/home">
-                  <button onClick={this.deleteCoffee}>delete</button>
-                </Link>
+                <img src={coffee.coffee_pic} className="coffee-bag" onDoubleClick={this.toggleAdminForm} />
+
+                <div className="adminInput">
+                  <label htmlFor="admin-password">Admin Password</label>
+                  <input type="password" name="admin-password" className="secretInput" />
+                  <button onClick={this.coffeeEdit}>Enter</button>
+                  <button onClick={this.toggleAdminForm}>Cancel</button>
+                </div>
               </div>
 
               <div className="coffee-info">

@@ -21,15 +21,18 @@ class PurchaseCoffee extends Component {
 
   render() {
     const listOfCoffee = this.state.coffee.map(item => {
-      return (
-        <div className="coffee-list">
-          <Link to={item.coffee_reference}>
-            <img src={item.coffee_pic} />
-          </Link>
-          <p>{item.coffee_name}</p>
-          <p>- ${item.price}.99</p>
-        </div>
-      );
+      // This if statement is to stop an error I had because I couldn't get access to the DB to edit it :(
+      if (item.id < 10) {
+        return (
+          <div className="coffee-list">
+            <Link to={item.coffee_reference}>
+              <img src={item.coffee_pic} />
+            </Link>
+            <p>{item.coffee_name}</p>
+            <p>- ${item.price}.99</p>
+          </div>
+        );
+      }
     });
 
     return (

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import EditDeathwishStyle from "./EditDeathwish.css";
 
 class EditDeathwish extends Component {
@@ -12,6 +13,7 @@ class EditDeathwish extends Component {
 
     this.handleInputs = this.handleInputs.bind(this);
     this.updateItem = this.updateItem.bind(this);
+    this.deleteCoffee = this.deleteCoffee.bind(this);
   }
 
   componentDidMount() {
@@ -24,7 +26,11 @@ class EditDeathwish extends Component {
 
   updateItem() {
     const { coffee_name, coffee_pic, side_pic, description } = this.state;
+
     axios.put(`http://localhost:3001/api/updateDeathwish`, { coffee_name, coffee_pic, side_pic, description }).then(console.log("updated"));
+  }
+  deleteCoffee() {
+    axios.delete("http://localhost:3001/api/deleteDeathwish").then(() => console.log("deleted"));
   }
 
   render() {
@@ -46,6 +52,10 @@ class EditDeathwish extends Component {
             <input type="text" name="description" defaultValue={coffee.description} onChange={this.handleDescription} />
           </form>
           <button onClick={this.updateItem}>Edit</button>
+          <Link to="/deathwish">
+            <button>Cancel</button>
+          </Link>
+          <button onDoubleClick={this.deleteCoffee}>Delete</button>
         </div>
       );
     });
