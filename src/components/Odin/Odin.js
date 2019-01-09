@@ -99,16 +99,18 @@ class Odin extends Component {
 
                 <div className="grind-wrapper">
                   <p>Select Grind</p>
-                  <img className="coffee-type" src="https://cdn.shopify.com/s/files/1/0271/7209/t/99/assets/ground.jpg?11144845398872562001" alt="ground coffee" />
-                  <img className="coffee-type" src="https://cdn.shopify.com/s/files/1/0271/7209/t/99/assets/whole.jpg?11144845398872562001" alt="ground coffee" />
+                  <img className="coffee-type" src="https://res.cloudinary.com/bfrest/image/upload/v1547036310/grounds.jpg" alt="ground coffee" />
+                  <img className="coffee-type" src="https://res.cloudinary.com/bfrest/image/upload/v1547036310/whole.jpg" alt="ground coffee" />
                 </div>
 
                 <div className="purchase-options-wrapper">
                   <p className="gray-background radio-text">
-                    <input type="radio" />One-time purchase $19.99
+                    <input type="radio" />
+                    One-time purchase $19.99
                   </p>
                   <p className="radio-text">
-                    <input type="radio" />Subscribe & Save 20%: $15.99
+                    <input type="radio" />
+                    Subscribe & Save 20%: $15.99
                   </p>
                   <p>
                     Deliver every
