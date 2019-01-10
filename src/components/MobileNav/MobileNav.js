@@ -56,7 +56,6 @@ class MobileNav extends Component {
         </div>
 
         {/* slide-in right shopping cart */}
-
         <div className="shopping-cart">
           <ShoppingCart closeCartFunction={this.closeCart} />
         </div>
