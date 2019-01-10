@@ -25,7 +25,7 @@ class Home extends Component {
           <p>100% MONEY-BACK GUARANTEE FREE DOMESTIC SHIPPING OVER $50</p>
 
           <form className="select-coffee">
-            <p className="select-coffee-header">SELECT COFFEE TYPE</p>
+            <h3 className="">SELECT COFFEE TYPE</h3>
             <ul>
               <li>
                 <img className="coffee-type-img" src="https://res.cloudinary.com/bfrest/image/upload/v1547036310/grounds.jpg" alt="ground coffee" />
@@ -37,21 +37,27 @@ class Home extends Component {
                 <img className="coffee-type-img" src="https://res.cloudinary.com/bfrest/image/upload/v1547036310/deathcups.jpg" alt="k-cup coffee" />
               </li>
             </ul>
-            <input type="radio" />
-            <span className="bold-desc">One-time purchase $19.99</span>
+            <div>
+              <input type="radio" />
+              <span className="bold-desc">One-time purchase $19.99</span>
+            </div>
             <br />
             <br />
-            <input type="radio" />
-            <span className="bold-desc">Subscribe & Save 20%: $15.99</span>
+            <div>
+              <input type="radio" />
+              <span className="bold-desc">Subscribe & Save 20%: $15.99</span>
+            </div>
             <br />
             <br />
-            <label>Deliver Every</label>
-            <select>
-              <option>7 Days</option>
-              <option>14 Days</option>
-              <option>30 Days</option>
-              <option>60 Days</option>
-            </select>
+            <div>
+              <label>Deliver Every</label>
+              <select>
+                <option>7 Days</option>
+                <option>14 Days</option>
+                <option>30 Days</option>
+                <option>60 Days</option>
+              </select>
+            </div>
             <br />
             <br />
             <button className="red-buy-button">BUY NOW</button>

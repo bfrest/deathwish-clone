@@ -35,6 +35,8 @@ $red: #ef3534;
   text-align: left;
   flex-direction: column;
   z-index: 1;
+  align-items: center;
+  justify-content: center;
 
   li {
     list-style-type: none;
@@ -42,9 +44,12 @@ $red: #ef3534;
   }
 
   p {
+    position: absolute;
     font-size: 1.4em;
     padding: 0 0 0 4%;
     width: 10%;
+    top: 0;
+    left: 0;
   }
 
   p:hover {

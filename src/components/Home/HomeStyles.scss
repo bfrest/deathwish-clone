@@ -6,6 +6,7 @@
   position: absolute;
   width: 75%;
   margin: 140px 0 0 0;
+  line-height: 1.4em;
 
   li {
     list-style-type: none;
@@ -25,17 +26,27 @@
 }
 
 .select-coffee {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
   background: #f2f2f2;
   width: 100%;
   padding: 20px;
+  margin-left: -15px;
+
+  ul {
+    margin: 0 50px 0 0;
+  }
+
+  ul li {
+    margin: 20px;
+  }
 }
 
 .coffee-type-img {
   width: 100px;
   height: 100px;
   border-radius: 50px;
-  margin-right: 10%;
-  margin: 20px;
   border: 2px solid gray;
 
   &:hover {
@@ -74,4 +85,16 @@
 
 .line {
   width: 100%;
+}
+
+@media (min-width: 900px) {
+  .homepage-wrapper {
+    font-size: 1.4em;
+  }
+
+  .main-coffee-image {
+    margin: 55px 0 55px 0;
+    width: 290px;
+    height: 340px;
+  }
 }
