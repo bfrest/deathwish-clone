@@ -10,7 +10,7 @@ class Home extends Component {
         <img
           className="main-coffee-image"
           src="https://cdn.shopify.com/s/files/1/0271/7209/products/1lb-ground_2048x2048_8c4fab8d-e6aa-4a33-90de-52184944022f_1024x1024.png?v=1511887286"
-          alt="coffee image"
+          alt="coffee bag"
         />
         <div className="aligning-right">
           <br />

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 //import DeathCups from "./DeathCups.css";
-import skull from "../../icons/skull.png";
-import { Link } from "react-router-dom";
+// import skull from "../../icons/skull.png";
+// import { Link } from "react-router-dom";
 import { Redirect } from "react-router";
 import { connect } from "react-redux";
 import { updateCoffee } from "../../ducks/reducer.js";
@@ -76,8 +76,8 @@ class DeathCups extends Component {
           return (
             <div className="deathwish-all" key={coffee.coffee_reference}>
               <div className="crud-button-with-img">
-                <img src={coffee.coffee_pic} className="coffee-bag" onDoubleClick={this.toggleAdminForm} />
-                <img src={coffee.side_pic} className="coffee-bag" />
+                <img src={coffee.coffee_pic} className="coffee-bag" onDoubleClick={this.toggleAdminForm} alt="bag of coffee" />
+                <img src={coffee.side_pic} className="coffee-bag" alt="bag of coffee" />
 
                 <div className="adminInput">
                   <label htmlFor="admin-password">Admin Password</label>
@@ -100,10 +100,12 @@ class DeathCups extends Component {
 
                 <div className="purchase-options-wrapper">
                   <p className="gray-background radio-text">
-                    <input type="radio" />One-time purchase $19.99
+                    <input type="radio" />
+                    One-time purchase $19.99
                   </p>
                   <p className="radio-text">
-                    <input type="radio" />Subscribe & Save 20%: $15.99
+                    <input type="radio" />
+                    Subscribe & Save 20%: $15.99
                   </p>
                   <p>
                     Deliver every

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ShoppingCartStyles from "./ShoppingCart.css";
+import "./ShoppingCart.css";
 import { connect } from "react-redux";
 
 class ShoppingCart extends Component {
@@ -34,7 +34,7 @@ class ShoppingCart extends Component {
     } else {
       cart = (
         <div className="cart-items-wrapper">
-          <img className="cartImg" src={coffee_pic} alt="coffee image" />
+          <img className="cartImg" src={coffee_pic} alt="coffee bag" />
           <p>
             {coffee_name}
             <br /> ${price}.99

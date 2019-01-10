@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 //import JackStyles from "./Jack.css";
-import skull from "../../icons/skull.png";
-import { Link } from "react-router-dom";
+// import skull from "../../icons/skull.png";
+// import { Link } from "react-router-dom";
 import { Redirect } from "react-router";
 import { connect } from "react-redux";
 import { updateCoffee } from "../../ducks/reducer.js";
@@ -76,8 +76,8 @@ class Jack extends Component {
           return (
             <div className="deathwish-all" key={coffee.coffee_reference}>
               <div className="crud-button-with-img">
-                <img src={coffee.coffee_pic} className="coffee-bag" onDoubleClick={this.toggleAdminForm} />
-                <img src={coffee.side_pic} className="coffee-bag" />
+                <img src={coffee.coffee_pic} className="coffee-bag" onDoubleClick={this.toggleAdminForm} alt="bag of coffee" />
+                <img src={coffee.side_pic} className="coffee-bag" alt="bag of coffee" />
                 <div className="adminInput">
                   <label htmlFor="admin-password">Admin Password</label>
                   <input type="password" name="admin-password" className="secretInput" />

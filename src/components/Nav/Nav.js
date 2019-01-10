@@ -1,5 +1,5 @@
 import React from "react";
-import NavStyles from "./NavStyles.css";
+import "./NavStyles.css";
 import shoppingCarLogo from "../../icons/shopping-cart.png";
 
 const Nav = () => {

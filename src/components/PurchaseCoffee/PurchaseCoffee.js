@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import PurchaseCoffeeStyles from "./PurchaseCoffeeStyles.css";
+import "./PurchaseCoffeeStyles.css";
 
 class PurchaseCoffee extends Component {
   constructor() {
@@ -15,24 +15,25 @@ class PurchaseCoffee extends Component {
   componentDidMount() {
     axios.get("http://localhost:3001/api/getAllCoffee").then(results => {
       this.setState({ coffee: [...results.data] });
-      console.log(results.data);
     });
   }
 
   render() {
     const listOfCoffee = this.state.coffee.map(item => {
       // This if statement is to stop an error I had because I couldn't get access to the DB to edit it :(
-      if (item.id < 10) {
-        return (
-          <div className="coffee-list">
-            <Link to={item.coffee_reference}>
-              <img src={item.coffee_pic} />
-            </Link>
-            <p>{item.coffee_name}</p>
-            <p>- ${item.price}.99</p>
-          </div>
-        );
-      }
+      return (
+        <div key={item.id}>
+          {item.id < 10 && (
+            <div className="coffee-list">
+              <Link to={item.coffee_reference}>
+                <img src={item.coffee_pic} alt="coffee" />
+              </Link>
+              <p>{item.coffee_name}</p>
+              <p>- ${item.price}.99</p>
+            </div>
+          )}
+        </div>
+      );
     });
 
     return (
