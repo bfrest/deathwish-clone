@@ -15,7 +15,8 @@ class Home extends Component {
         <div className="aligning-right">
           <br />
           <p>
-            WAKE UP WITH THE WORLDS <br />
+            WAKE UP WITH THE WORLDS
+            <br />
             <span className="bold-red-header">STRONGEST</span>
             <br />
             COFFEE
