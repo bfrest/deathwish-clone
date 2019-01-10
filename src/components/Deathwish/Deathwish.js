@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
-import DeathwishStyles from "./Deathwish.css";
+import "./Deathwish.css";
 import skull from "../../icons/skull.png";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import { Redirect } from "react-router";
 import { connect } from "react-redux";
 import { updateCoffee } from "../../ducks/reducer.js";
@@ -76,7 +76,7 @@ class Deathwish extends Component {
           return (
             <div className="deathwish-all" key={coffee.coffee_reference}>
               <div className="crud-button-with-img">
-                <img src={coffee.coffee_pic} className="coffee-bag" onDoubleClick={this.toggleAdminForm} />
+                <img src={coffee.coffee_pic} className="coffee-bag" onDoubleClick={this.toggleAdminForm} alt="bag of coffee" />
 
                 <div className="adminInput">
                   <label htmlFor="admin-password">Admin Password</label>
@@ -99,16 +99,18 @@ class Deathwish extends Component {
 
                 <div className="grind-wrapper">
                   <p>Select Grind</p>
-                  <img className="coffee-type" src="https://cdn.shopify.com/s/files/1/0271/7209/t/99/assets/ground.jpg?11144845398872562001" alt="ground coffee" />
-                  <img className="coffee-type" src="https://cdn.shopify.com/s/files/1/0271/7209/t/99/assets/whole.jpg?11144845398872562001" alt="ground coffee" />
+                  <img className="coffee-type" src="https://res.cloudinary.com/bfrest/image/upload/v1547036310/grounds.jpg" alt="ground coffee" />
+                  <img className="coffee-type" src="https://res.cloudinary.com/bfrest/image/upload/v1547036310/whole.jpg" alt="ground coffee" />
                 </div>
 
                 <div className="purchase-options-wrapper">
                   <p className="gray-background radio-text">
-                    <input type="radio" />One-time purchase $19.99
+                    <input type="radio" />
+                    One-time purchase $19.99
                   </p>
                   <p className="radio-text">
-                    <input type="radio" />Subscribe & Save 20%: $15.99
+                    <input type="radio" />
+                    Subscribe & Save 20%: $15.99
                   </p>
                   <p>
                     Deliver every
@@ -133,7 +135,8 @@ class Deathwish extends Component {
                   <p>{coffee.description}</p>
 
                   <p>
-                    <img className="skull" src={skull} alt="skull" />WARNING: HIGHLY ADDICTIVE
+                    <img className="skull" src={skull} alt="skull" />
+                    WARNING: HIGHLY ADDICTIVE
                   </p>
                   <li>{coffee.bullet1}</li>
                   <li>{coffee.bullet2}</li>

@@ -5,6 +5,7 @@
   align-self: center;
   position: absolute;
   width: 75%;
+  margin: 140px 0 0 0;
 
   li {
     list-style-type: none;
@@ -85,10 +86,9 @@
 
     .main-coffee-image {
       grid-column: 1 / 2;
-      height: 400px;
-      width: 300px;
+      height: 500px;
+      width: 400px;
       justify-self: center;
-      margin: 20% 0 0 0;
     }
 
     .warning-description {

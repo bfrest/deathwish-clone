@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import AppStyle from "./AppStyles.css";
+import "./AppStyles.css";
 import routes from "./routes.js";
 
 // components

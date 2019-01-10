@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import EditDeathwishStyle from "./EditDeathwish.css";
+import "./EditDeathwish.css";
 
 class EditDeathwish extends Component {
   constructor() {
