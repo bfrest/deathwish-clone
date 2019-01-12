@@ -28,6 +28,6 @@ app.get("/api/getDeathCups", coffeeController.getDeathCups);
 app.put("/api/updateDeathwish", coffeeController.updateDeathwish);
 app.delete("/api/deleteDeathwish", coffeeController.deleteDeathwish);
 
-app.listen(proccess.env.CONNECTION_STRING || 3001, () => {
+app.listen(dbConnect || 3001, () => {
   console.log("APP IS CAFFINATED");
 });
